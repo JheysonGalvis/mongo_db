@@ -1,3 +1,9 @@
+- [EditConfig](#editorconfig)
+- [Docker Compose](#docker-compose)
+
+# EditConfig
+
+```
 root = true
 
 [*]
@@ -12,9 +18,28 @@ max_line_length = off
 
 [CHANGELOG.md]
 indent_size = false
+``` 
 
-______________________________________________________________________
-Array Update Operators
+### Docker Compose
+
+```yml
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+```
+
+### Array Update Operators
+
+```js
 use("sena_store")
 
 db.inventory.drop()
@@ -28,10 +53,12 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
+```
 
-______________________________________________________________________
-Upsert
-use("platzi_store")
+### Upsert
+
+```js
+use("sena_store")
 
 db.iot.drop()
 
@@ -43,8 +70,12 @@ db.iot.insertMany([
 ])
 
 db.iot.find()
-Delete doccs
-use("platzi_store")
+```
+
+## Delete doccs
+
+```js
+use("sena_store")
 
 db.products.drop()
 
@@ -58,8 +89,13 @@ db.products.insertMany([
 ])
 
 db.products.find()
-Usando $eq y $ne
-use("platzi_store")
+
+```
+
+## Usando $eq y $ne
+
+```js
+use("sena_store")
 
 db.inventory.drop()
 
@@ -72,8 +108,12 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
-Regex
-use("platzi_store")
+```
+
+## Regex
+
+```js
+use("sena_store")
 
 db.inventory.drop()
 
@@ -86,8 +126,12 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
-Arrays Opertators
-use("platzi_store")
+```
+
+## Arrays Opertators
+
+```js
+use("sena_store")
 
 db.inventory.drop()
 
@@ -100,7 +144,10 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
-use("platzi_store");
+```
+
+```js
+use("sena_store");
 
 db.survey.drop();
 
@@ -136,8 +183,12 @@ db.survey.insertMany([
 ]);
 
 db.survey.find();
-Expresive operator
-use("platzi_store")
+```
+
+## Expresive operator
+
+```js
+use("sena_store")
 
 db.monthlyBudget.drop()
 
@@ -150,8 +201,12 @@ db.monthlyBudget.insertMany([
 ])
 
 db.monthlyBudget.find()
-Sort & Limit
-use("platzi_store")
+```
+
+## Sort & Limit
+
+```js
+use("sena_store")
 
 db.categories.drop()
 
@@ -169,8 +224,4 @@ db.categories.insertMany([
 ])
 
 db.categories.find()
-@Jeffuy
-Jeffuy commented on Feb 28, 2023
-image
-
-Little typo on "Operator" title.
+```
